@@ -52,10 +52,10 @@ const Index = () => {
   ];
 
   const experience = [
-    { year: '2024', title: 'Преподаватель математики', place: 'Частная практика' },
+    { year: '2024-2025', title: 'Преподаватель математики', place: 'Частная практика' },
     { year: '2020-2023', title: 'Старший преподаватель', place: 'Образовательный центр "Знание"' },
     { year: '2018-2020', title: 'Репетитор математики', place: 'Онлайн-школа МатемАтика' },
-    { year: '2018', title: 'Диплом с отличием', place: 'МГУ им. М.В. Ломоносова' }
+    { year: '2018', title: 'Диплом с отличием', place: 'ГУАП (Санкт-Петербургский государственный университет аэрокосмического приборостроения)' }
   ];
 
   const testimonials = [
@@ -194,7 +194,7 @@ const Index = () => {
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground">
-                      Диплом с отличием МГУ им. М.В. Ломоносова, факультет математики.
+                      Диплом с отличием ГУАП (Санкт-Петербургский государственный университет аэрокосмического приборостроения), факультет математики.
                       Специализация: прикладная математика и информатика.
                     </p>
                   </CardContent>
@@ -235,6 +235,18 @@ const Index = () => {
                     </p>
                   </CardContent>
                 </Card>
+              </div>
+              <div className="mt-12 grid md:grid-cols-2 gap-6">
+                <img
+                  src="https://cdn.poehali.dev/projects/66589ff6-cb14-4c60-b94b-c0c39bf6f5d4/files/233df5d8-f9db-4a72-bf31-a2f06a8c47c6.jpg"
+                  alt="Обучение математике"
+                  className="rounded-xl shadow-lg w-full h-64 object-cover"
+                />
+                <img
+                  src="https://cdn.poehali.dev/projects/66589ff6-cb14-4c60-b94b-c0c39bf6f5d4/files/de8da475-c5ca-48bc-bccd-f7cba88f3dda.jpg"
+                  alt="Успешные результаты учеников"
+                  className="rounded-xl shadow-lg w-full h-64 object-cover"
+                />
               </div>
             </div>
           </div>
@@ -392,15 +404,19 @@ const Index = () => {
               <div className="flex flex-wrap justify-center gap-6 mb-8">
                 <div className="flex items-center gap-2">
                   <Icon name="Mail" size={24} />
-                  <span>math.tutor@example.com</span>
+                  <a href="mailto:rudenkodara61@gmail.com" className="hover:text-primary transition-colors">
+                    rudenkodara61@gmail.com
+                  </a>
                 </div>
                 <div className="flex items-center gap-2">
                   <Icon name="Phone" size={24} />
-                  <span>+7 (999) 123-45-67</span>
+                  <a href="tel:+79819380016" className="hover:text-primary transition-colors">
+                    +7 (981) 938-00-16
+                  </a>
                 </div>
                 <div className="flex items-center gap-2">
                   <Icon name="MapPin" size={24} />
-                  <span>Москва, м. Университет</span>
+                  <span>Санкт-Петербург</span>
                 </div>
               </div>
               <Button
@@ -424,7 +440,7 @@ const Index = () => {
               <span className="text-xl font-bold">МатемАтика</span>
             </div>
             <p className="text-white/70">
-              © 2024 Репетитор по математике. Все права защищены.
+              © 2025 Репетитор по математике. Все права защищены.
             </p>
           </div>
         </div>
