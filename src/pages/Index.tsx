@@ -240,12 +240,12 @@ const Index = () => {
                 <img
                   src="https://cdn.poehali.dev/files/5339420922424790055.jpg"
                   alt="Анализ и рост результатов"
-                  className="rounded-xl shadow-lg w-full h-64 object-cover"
+                  className="rounded-xl shadow-lg w-full h-auto object-contain hover:scale-105 transition-transform duration-300"
                 />
                 <img
                   src="https://cdn.poehali.dev/files/5339420922424790054.jpg"
                   alt="Путь к успеху"
-                  className="rounded-xl shadow-lg w-full h-64 object-cover"
+                  className="rounded-xl shadow-lg w-full h-auto object-contain hover:scale-105 transition-transform duration-300"
                 />
               </div>
             </div>
@@ -263,7 +263,7 @@ const Index = () => {
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
               {services.map((service, index) => (
-                <Card key={index} className="hover:shadow-lg transition-shadow">
+                <Card key={index} className="hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
                   <CardHeader>
                     <Icon name={service.icon} className="text-primary mb-2" size={40} />
                     <CardTitle>{service.title}</CardTitle>
@@ -273,7 +273,7 @@ const Index = () => {
                     <div className="text-2xl font-bold text-primary mb-4">
                       {service.price}
                     </div>
-                    <Button className="w-full" onClick={() => scrollToSection('schedule')}>
+                    <Button className="w-full hover:scale-105 transition-transform" onClick={() => scrollToSection('schedule')}>
                       Записаться
                     </Button>
                   </CardContent>
