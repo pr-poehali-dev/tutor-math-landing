@@ -167,8 +167,8 @@ const Index = () => {
               </div>
               <div className="animate-fade-in">
                 <img
-                  src="https://cdn.poehali.dev/projects/66589ff6-cb14-4c60-b94b-c0c39bf6f5d4/files/d013d04f-f0ca-4337-97cc-d5874fbfce45.jpg"
-                  alt="Математические тетради и формулы"
+                  src="https://cdn.poehali.dev/files/5339420922424790031.jpg"
+                  alt="Математика и логика"
                   className="rounded-2xl shadow-2xl"
                 />
               </div>
@@ -238,13 +238,13 @@ const Index = () => {
               </div>
               <div className="mt-12 grid md:grid-cols-2 gap-6">
                 <img
-                  src="https://cdn.poehali.dev/projects/66589ff6-cb14-4c60-b94b-c0c39bf6f5d4/files/233df5d8-f9db-4a72-bf31-a2f06a8c47c6.jpg"
-                  alt="Обучение математике"
+                  src="https://cdn.poehali.dev/files/5339420922424790055.jpg"
+                  alt="Анализ и рост результатов"
                   className="rounded-xl shadow-lg w-full h-64 object-cover"
                 />
                 <img
-                  src="https://cdn.poehali.dev/projects/66589ff6-cb14-4c60-b94b-c0c39bf6f5d4/files/de8da475-c5ca-48bc-bccd-f7cba88f3dda.jpg"
-                  alt="Успешные результаты учеников"
+                  src="https://cdn.poehali.dev/files/5339420922424790054.jpg"
+                  alt="Путь к успеху"
                   className="rounded-xl shadow-lg w-full h-64 object-cover"
                 />
               </div>
