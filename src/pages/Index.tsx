@@ -236,16 +236,16 @@ const Index = () => {
                   </CardContent>
                 </Card>
               </div>
-              <div className="mt-12 grid md:grid-cols-2 gap-6">
+              <div className="mt-12 grid md:grid-cols-2 gap-6 items-start">
                 <img
                   src="https://cdn.poehali.dev/files/5339420922424790055.jpg"
                   alt="Анализ и рост результатов"
-                  className="rounded-xl shadow-lg w-full h-auto object-contain hover:scale-105 transition-transform duration-300"
+                  className="rounded-xl shadow-lg w-full h-[400px] object-contain hover:scale-105 transition-transform duration-300"
                 />
                 <img
                   src="https://cdn.poehali.dev/files/5339420922424790054.jpg"
                   alt="Путь к успеху"
-                  className="rounded-xl shadow-lg w-full h-auto object-contain hover:scale-105 transition-transform duration-300"
+                  className="rounded-xl shadow-lg w-full h-[400px] object-contain hover:scale-105 transition-transform duration-300"
                 />
               </div>
             </div>
