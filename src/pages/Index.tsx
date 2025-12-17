@@ -3,11 +3,20 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Calendar } from '@/components/ui/calendar';
 import { Badge } from '@/components/ui/badge';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import { useToast } from '@/hooks/use-toast';
 import Icon from '@/components/ui/icon';
 
 const Index = () => {
   const [selectedDate, setSelectedDate] = useState<Date | undefined>(new Date());
   const [activeSection, setActiveSection] = useState('home');
+  const [showLoginDialog, setShowLoginDialog] = useState(false);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [isLogin, setIsLogin] = useState(true);
+  const { toast } = useToast();
 
   const scrollToSection = (sectionId: string) => {
     setActiveSection(sectionId);
@@ -158,8 +167,8 @@ const Index = () => {
               </div>
               <div className="animate-fade-in">
                 <img
-                  src="https://cdn.poehali.dev/projects/66589ff6-cb14-4c60-b94b-c0c39bf6f5d4/files/66385c33-67c9-42e8-8d4d-4bc104940a59.jpg"
-                  alt="Репетитор математики"
+                  src="https://cdn.poehali.dev/projects/66589ff6-cb14-4c60-b94b-c0c39bf6f5d4/files/d013d04f-f0ca-4337-97cc-d5874fbfce45.jpg"
+                  alt="Математические тетради и формулы"
                   className="rounded-2xl shadow-2xl"
                 />
               </div>
@@ -353,11 +362,17 @@ const Index = () => {
                             key={index}
                             variant="outline"
                             className="w-full justify-start"
+                            onClick={() => setShowLoginDialog(true)}
                           >
                             <Icon name="Clock" className="mr-2" size={18} />
                             {slot}
                           </Button>
                         ))}
+                      </div>
+                      <div className="mt-6 p-4 bg-muted rounded-lg">
+                        <p className="text-sm text-muted-foreground text-center">
+                          Для записи на урок необходимо войти в систему
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -414,6 +429,69 @@ const Index = () => {
           </div>
         </div>
       </footer>
+
+      <Dialog open={showLoginDialog} onOpenChange={setShowLoginDialog}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle>{isLogin ? 'Вход в систему' : 'Регистрация'}</DialogTitle>
+            <DialogDescription>
+              {isLogin 
+                ? 'Войдите в личный кабинет для записи на урок'
+                : 'Создайте аккаунт для записи на занятия'}
+            </DialogDescription>
+          </DialogHeader>
+          <form onSubmit={(e) => {
+            e.preventDefault();
+            toast({
+              title: isLogin ? 'Вход выполнен' : 'Регистрация завершена',
+              description: isLogin 
+                ? 'Добро пожаловать! Теперь вы можете записаться на урок.'
+                : 'Аккаунт создан. Теперь вы можете войти в систему.',
+            });
+            setShowLoginDialog(false);
+            setEmail('');
+            setPassword('');
+          }} className="space-y-4">
+            <div className="space-y-2">
+              <Label htmlFor="email">Email</Label>
+              <Input
+                id="email"
+                type="email"
+                placeholder="example@mail.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="password">Пароль</Label>
+              <Input
+                id="password"
+                type="password"
+                placeholder="Введите пароль"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                minLength={6}
+              />
+            </div>
+            <Button type="submit" className="w-full">
+              {isLogin ? 'Войти' : 'Зарегистрироваться'}
+            </Button>
+            <div className="text-center">
+              <button
+                type="button"
+                onClick={() => setIsLogin(!isLogin)}
+                className="text-sm text-primary hover:underline"
+              >
+                {isLogin 
+                  ? 'Нет аккаунта? Зарегистрироваться'
+                  : 'Уже есть аккаунт? Войти'}
+              </button>
+            </div>
+          </form>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };
